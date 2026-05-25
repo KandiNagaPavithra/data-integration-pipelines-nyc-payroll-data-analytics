@@ -1,0 +1,15 @@
+{
+	"name": "adf-nycpayroll-pavi",
+	"properties": {
+		"trustModeClaimForMi": {
+			"value": "Disabled",
+			"editable": true
+		}
+	},
+	"location": "westus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "e42c45b1-1a6b-40b3-bb25-cd3bd1a0bf5a",
+		"tenantId": "f958e84a-92b8-439f-a62d-4f45996b6d07"
+	}
+}
