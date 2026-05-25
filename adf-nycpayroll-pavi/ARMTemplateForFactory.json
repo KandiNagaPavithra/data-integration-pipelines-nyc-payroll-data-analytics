@@ -179,6 +179,40 @@
 							},
 							"traceLevel": "Fine"
 						}
+					},
+					{
+						"name": "Summary",
+						"type": "ExecuteDataFlow",
+						"dependsOn": [],
+						"policy": {
+							"timeout": "0.12:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"dataflow": {
+								"referenceName": "dataflowSummary",
+								"type": "DataFlowReference",
+								"parameters": {
+									"dataflow_param_fiscalyear": 2020
+								},
+								"datasetParameters": {
+									"sourcePayroll2020": {},
+									"sourcepayroll2021": {},
+									"sinkSummary": {},
+									"sinkAdlsStaging": {}
+								}
+							},
+							"staging": {},
+							"compute": {
+								"coreCount": 8,
+								"computeType": "General"
+							},
+							"traceLevel": "Fine"
+						}
 					}
 				],
 				"policy": {
@@ -191,7 +225,8 @@
 				"[concat(variables('factoryId'), '/dataflows/df_LoadAgencyMaster')]",
 				"[concat(variables('factoryId'), '/dataflows/df_LoadTitleMaster')]",
 				"[concat(variables('factoryId'), '/dataflows/df_Payroll_2020')]",
-				"[concat(variables('factoryId'), '/dataflows/df_Payroll_2021')]"
+				"[concat(variables('factoryId'), '/dataflows/df_Payroll_2021')]",
+				"[concat(variables('factoryId'), '/dataflows/dataflowSummary')]"
 			]
 		},
 		{
